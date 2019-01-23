@@ -9,9 +9,19 @@
         template: "<h2>You're on the users page!</h2>"
     };
 
+    const ContactPageComponent = {
+        template: "<h2>You're on the contact page!</h2>"
+    };
+
+    const ErrorPageComponent = {
+        template: "<h2>Page not found! Please try again</h2>"
+    };
+
     const routes = [
         { path: '/', name: 'home', component: HomePageComponent},
-        { path: '/users', name: 'users', component: UserPageComponent}
+        { path: '/users', name: 'users', component: UserPageComponent},
+        { path: '/contact', name: 'users', component: ContactPageComponent},
+        { path: '*', name: 'error', component: ErrorPageComponent}
     ];
 
     const router = new VueRouter({
@@ -31,7 +41,8 @@
 
         components: {
             'HomePageComponent': HomePageComponent,
-            'UserPageComponent': UserPageComponent
+            'UserPageComponent': UserPageComponent,
+            'ContactPageComponent': ContactPageComponent
         },
 
         router: router
